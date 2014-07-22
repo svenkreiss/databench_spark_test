@@ -121,7 +121,9 @@ s3cmd sync s3://svenkreiss-spark-test/log/ log/
 # Experiments
 
 ```bash
-java -cp /home/hadoop/spark/jars/*:/home/hadoop/spark/conf:/home/hadoop/spark/jars/spark-assembly-0.8.1-incubating-hadoop1.0.4.jar:/home/hadoop/commons-math3-3.3.jar:/home/hadoop/montecarlorisk/target/montecarlo-risk-0.0.1-SNAPSHOT.jar com.cloudera.datascience.montecarlorisk.MonteCarloRisk
+java \
+-cp /home/hadoop/spark/jars/*:/home/hadoop/spark/conf:/home/hadoop/spark/jars/spark-assembly-0.8.1-incubating-hadoop1.0.4.jar:/home/hadoop/commons-math3-3.3.jar:/home/hadoop/montecarlorisk/target/montecarlo-risk-0.0.1-SNAPSHOT.jar \
+com.cloudera.datascience.montecarlorisk.MonteCarloRisk
 ```
 
 

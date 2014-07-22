@@ -23,7 +23,14 @@ Have a `credentials.json` file:
 Create cluster with:
 
 ```bash
-../elastic-mapreduce-cli/elastic-mapreduce --create --alive --name "Spark/Shark Cluster"  --bootstrap-action s3://elasticmapreduce/samples/spark/0.8.1/install-spark-shark.sh --bootstrap-name "Spark/Shark"  --instance-type m1.medium --instance-count 2 --jobflow-role sparktest
+../elastic-mapreduce-cli/elastic-mapreduce \
+--create --alive \
+--name "Spark/Shark Cluster" \
+--bootstrap-action s3://elasticmapreduce/samples/spark/0.8.1/install-spark-shark.sh \
+--bootstrap-name "Spark/Shark" \
+--instance-type m1.medium \
+--instance-count 2 \
+--jobflow-role sparktest
 ```
 
 
@@ -82,7 +89,14 @@ Launch cluster and run job (broken):
 Launch cluster (takes 18min). This can probably also simply be done in the web console.
 
 ```bash
-export JOBFLOWID=$(../elastic-mapreduce-cli/elastic-mapreduce --create --plain-output --alive --name "Spark/Shark Cluster"  --bootstrap-action s3://elasticmapreduce/samples/spark/0.8.1/install-spark-shark.sh --bootstrap-name "Spark/Shark"  --instance-type m1.medium --instance-count 2 --jobflow-role sparktest)
+export JOBFLOWID=$(../elastic-mapreduce-cli/elastic-mapreduce \
+--create --plain-output --alive \
+--name "Spark/Shark Cluster"  \
+--bootstrap-action s3://elasticmapreduce/samples/spark/0.8.1/install-spark-shark.sh \
+--bootstrap-name "Spark/Shark" \
+--instance-type m1.medium \
+--instance-count 2 \
+--jobflow-role sparktest)
 ```
 
 Run job. It seems the "Add Step" web interface could do the same.

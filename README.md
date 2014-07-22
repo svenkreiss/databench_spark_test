@@ -129,5 +129,5 @@ com.cloudera.datascience.montecarlorisk.MonteCarloRisk
 
 # Local Apache Spark
 
-On a Mac, it is as simple as `brew install apache-spark` now which installs `spark` and `pyspark`. You can run `helloworld.py` with pyspark, but not with plain python.
+On a Mac, it is as simple as `brew install apache-spark` now which installs `spark` and `pyspark`. You can run `helloworld_standalone.py` with pyspark, but not with plain python.
 

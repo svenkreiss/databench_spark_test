@@ -1,5 +1,12 @@
-from pyspark import SparkContext
-sc = SparkContext("local", "App Name", pyFiles=['helloworld_standalone.py'])
+"""Helloworld for pyspark. The purpose is to simple test the Spark
+environment."""
 
-print 'hello world'
-print sc
+from pyspark import SparkContext
+
+
+if __name__ == "__main__":
+    sc = SparkContext("local", "App Name",
+                      pyFiles=['helloworld_standalone.py'])
+
+    print 'hello world'
+    print sc

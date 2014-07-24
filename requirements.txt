@@ -14,4 +14,4 @@ itsdangerous==0.24
 jinja2-highlight==0.5.1
 wsgiref==0.1.2
 
--e git+https://github.com/svenkreiss/databench.git#egg=databench-dev-0.3
+-e git+https://github.com/svenkreiss/databench.git@dev-0.3#egg=databench-master

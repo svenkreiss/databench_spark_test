@@ -1,0 +1,29 @@
+{% from 'macros.html' import include_src %}
+{% extends "base.html" %}
+
+
+{% block title %}Hello World{% endblock %}
+
+
+{% block content %}
+{% filter markdown %}
+# Hello World
+
+Cool.
+{% endfilter %}
+
+<pre id="log"></pre>
+{% endblock %}
+
+
+{% block footerscripts %}
+<script>
+    var databench = Databench('helloworld');
+    databench.genericElements.log($('#log'));
+
+    setInterval(function() {
+        console.log('test');
+        databench.signals.emit('frontendmessage', 'test');
+    }, 1000);
+</script>
+{% endblock %}

@@ -6,13 +6,24 @@
 
 
 {% block content %}
+<div class="row">
+    <div class="col-md-6">
 {% filter markdown %}
 # Hello World
 
-Cool.
+This is the first test of `pyspark` and `databench`. Also for the first
+time, it connects a _language kernel_ via `zmq` to the main `databench`
+process. This means the analysis runs without altering the threading
+model which was necessary to support `SocketIO` and which conflicts with
+the configuration necessary to support `pyspark`.
 {% endfilter %}
+    </div>
 
-<pre id="log"></pre>
+    <div class="col-md-6">
+        <h1>Log</h1>
+        <pre id="log"></pre>
+    </div>
+</div>
 {% endblock %}
 
 

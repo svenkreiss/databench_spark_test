@@ -2,11 +2,7 @@
 
 import databench_py
 
-import logging
 from pyspark import SparkContext
-
-# logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger('helloworld_kernel')
 
 
 class HelloWorld(databench_py.Analysis):
@@ -21,12 +17,10 @@ class HelloWorld(databench_py.Analysis):
         self.emit('log', 'on_connect: Hello World')
 
     def on_frontendmessage(self, msg):
-        logger.debug('on_frontendmessage: '+str(msg))
         self.emit('log', 'on_frontendmessage: Hello World')
 
-        do_something = self.sc.parallelize(range(5), 5).glom().collect()
-        print do_something
-        self.emit('log', str(do_something))
+        do_something = self.sc.parallelize(range(5), 2)
+        self.emit('log', do_something.glom().collect())
 
 
 if __name__ == "__main__":

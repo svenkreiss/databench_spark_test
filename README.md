@@ -1,6 +1,6 @@
 # Run Locally
 
-This demo runs `pyspark` locally and interfaces with [Databench](https://github.com/svenkreiss/databench). On a Mac, it is as simple as `brew install apache-spark` now which installs `spark` and `pyspark`. As a test, you can run `pyspark helloworld_standalone.py`.
+This demo runs `pyspark` locally and interfaces with [Databench](https://github.com/svenkreiss/databench). On a Mac, run `brew install apache-spark` which installs `spark` and `pyspark`. As a test, you can run `pyspark helloworld_standalone.py`.
 
 For Databench, run `pip install -r requirements.txt` (which installs the experiemental `dev-0.3` branch) and then run `databench`.
 

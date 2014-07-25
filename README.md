@@ -1,3 +1,10 @@
+# Run Locally
+
+This demo runs `pyspark` locally and interfaces with [Databench](https://github.com/svenkreiss/databench). On a Mac, it is as simple as `brew install apache-spark` now which installs `spark` and `pyspark`. As a test, you can run `pyspark helloworld_standalone.py`.
+
+For Databench, run `pip install -r requirements.txt` (which installs the experiemental `dev-0.3` branch) and then run `databench`.
+
+
 # Start Cluster
 
 > Following: https://aws.amazon.com/articles/4926593393724923
@@ -117,7 +124,6 @@ s3cmd sync s3://svenkreiss-spark-test/log/ log/
 ```
 
 
-
 # Experiments
 
 ```bash
@@ -125,9 +131,3 @@ java \
 -cp /home/hadoop/spark/jars/*:/home/hadoop/spark/conf:/home/hadoop/spark/jars/spark-assembly-0.8.1-incubating-hadoop1.0.4.jar:/home/hadoop/commons-math3-3.3.jar:/home/hadoop/montecarlorisk/target/montecarlo-risk-0.0.1-SNAPSHOT.jar \
 com.cloudera.datascience.montecarlorisk.MonteCarloRisk
 ```
-
-
-# Local Apache Spark
-
-On a Mac, it is as simple as `brew install apache-spark` now which installs `spark` and `pyspark`. You can run `helloworld_standalone.py` with pyspark, but not with plain python.
-

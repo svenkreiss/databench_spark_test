@@ -14,7 +14,7 @@
 This is the first test of `pyspark` and `databench`. Also for the first
 time, it connects a _language kernel_ via `zmq` to the main `databench`
 process. This means the analysis runs without altering the threading
-model which was necessary to support `SocketIO` and which conflicts with
+model which was necessary to support WebSockets and which conflicts with
 the configuration necessary to support `pyspark`.
 {% endfilter %}
     </div>
@@ -29,12 +29,12 @@ the configuration necessary to support `pyspark`.
 
 {% block footerscripts %}
 <script>
-    var databench = Databench('helloworld');
-    databench.genericElements.log($('#log'));
+    var databench = Databench('helloworld_pyspark');
+    databench.genericElements.log('log');
 
     setInterval(function() {
         console.log('test');
-        databench.signals.emit('frontendmessage', 'test');
+        databench.emit('frontendmessage', {});
     }, 1000);
 </script>
 {% endblock %}

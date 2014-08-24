@@ -9,4 +9,4 @@ The `mcrisk` example is based on [montecarlorisk](https://github.com/sryza/monte
 
 ### Notes
 
-I am also working on interfacing Databench with Scala and then running the mcrisk example in Scala with Databench. Some dev notes (meaning nothing works) are here [[notes_emr.md]].
+I am also working on interfacing Databench with Scala and then running the mcrisk example in Scala with Databench. Some dev notes (meaning nothing works) are here [notes_emr](notes_emr.md).

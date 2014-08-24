@@ -1,0 +1,39 @@
+{% from 'macros.html' import include_src %}
+{% extends "base.html" %}
+
+
+{% block title %}MC Risk{% endblock %}
+
+
+{% block content %}
+{% filter markdown %}
+# Monte Carlo Value at Risk Calculation
+
+Sandy Ryza at Cloudera wrote a nice blog post about [Estimizing Financial Risk with Apache Spark](http://blog.cloudera.com/blog/2014/07/estimating-financial-risk-with-apache-spark/). Please see that blog post for details about Value at Risk (VaR) and the general setup of the problem. This demo is a direct port of the Scala/Spark code to Python/PySpark and interfaced with [Databench](http://www.svenkreiss.com/databench/).
+
+## VaR = <span id="var">??</span> million US$
+{% endfilter %}
+
+<div id="canvas"></div>
+
+<h1>Log</h1>
+<pre id="log"></pre>
+{% endblock %}
+
+
+{% block footerscripts %}
+<script>
+    var databench = Databench('mcrisk_pyspark');
+    databench.genericElements.log('log');
+    databench.genericElements.mpld3canvas('canvas');
+
+    databench.on('varFivePercent', function(value) {
+        $('#var').text(value.toFixed(1));
+    });
+
+    databench.emit('run', {});
+    setInterval(function() {
+        databench.emit('run', {});
+    }, 5000);
+</script>
+{% endblock %}

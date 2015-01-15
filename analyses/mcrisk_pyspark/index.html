@@ -23,8 +23,7 @@ Sandy Ryza at Cloudera wrote a nice blog post about [Estimizing Financial Risk w
 
 {% block footerscripts %}
 <script>
-    var databench = Databench('mcrisk_pyspark');
-    databench.genericElements.log('log');
+    var databench = Databench();
     databench.genericElements.mpld3canvas('canvas');
 
     databench.on('varFivePercent', function(value) {

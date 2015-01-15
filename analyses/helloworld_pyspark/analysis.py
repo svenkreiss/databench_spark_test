@@ -28,5 +28,7 @@ class Analysis(databench_py.Analysis):
 
 
 if __name__ == "__main__":
-    analysis = databench_py.Meta('helloworld_pyspark', __doc__, Analysis)
+    analysis = databench_py.singlethread.Meta(
+        'helloworld_pyspark', __name__, __doc__, Analysis
+    )
     analysis.event_loop()

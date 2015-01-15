@@ -44,7 +44,7 @@ class Analysis(databench_py.Analysis):
             [-1.2, 3.0, -0.8],
             [0.0, -0.8, 3.0],
         ]
-        seed = random.randint(1e5, 1e10)
+        seed = random.randint(1e5, 1e8)
 
         # Send all instruments to every node
         broadcastInstruments = self.sc.broadcast(instruments)
@@ -129,5 +129,7 @@ class Analysis(databench_py.Analysis):
 
 
 if __name__ == "__main__":
-    analysis = databench_py.Meta('mcrisk_pyspark', __doc__, Analysis)
+    analysis = databench_py.singlethread.Meta(
+        'mcrisk_pyspark', __name__, __doc__, Analysis
+    )
     analysis.event_loop()
